@@ -23,3 +23,4 @@ An AirFlow project to gather data from OpenWeatherMap API at regular intervals.
 
 This project follows star schema in a data warehouse
 ![Database Schema](./SQL/db_schema.png)
+![Database Schema](./SQL/Dashboard.png)
