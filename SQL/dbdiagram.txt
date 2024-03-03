@@ -1,0 +1,63 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table W_FACT {
+  record_id varchar
+  station_id integer
+  time_id varchar
+  parameter_id varchar
+  temp_id varchar
+  heat_index_id varchar
+}
+
+Table W_STATION {
+  station_id integer [primary key]
+  lat float
+  long float
+  city varchar
+  country_code varchar 
+  enabled int
+}
+
+Table W_TIME_DIM {
+  time_id varchar [primary key]
+  record_datetime timestamp
+  record_date timestamp 
+  record_month varchar
+  record_year varchar
+  record_quarter varchar
+  record_season varchar
+  record_weekday varchar
+}
+
+Table W_PARAM_DIM {
+  parameter_id varchar [primary key]
+  humidity integer
+  pressure integer
+  wind_speed float
+  wind_direction float
+  visibility integer
+  cloudiness integer
+  dew_point float
+}
+
+Table W_TEMP_DIM {
+  temp_id varchar [primary key]
+  temp float
+  temp_range_min float
+  temp_range_max float
+  feels_like float
+}
+
+Table W_HEAT_INDEX_DIM {
+  heat_index_id varchar [primary key]
+  heat_index float
+  heat_index_category integer
+  description text
+}
+
+Ref: W_FACT.station_id > W_STATION.station_id
+Ref: W_FACT.time_id - W_TIME_DIM.time_id
+Ref: W_FACT.parameter_id - W_PARAM_DIM.parameter_id
+Ref: W_FACT.temp_id - W_TEMP_DIM.temp_id
+Ref: W_FACT.heat_index_id - W_HEAT_INDEX_DIM.heat_index_id

@@ -1,0 +1,19 @@
+{
+    "base": "stations",
+    "temp": 6.26,
+    "feels_like": 3.34,
+    "pressure": 1014,
+    "humidity": 61,
+    "visibility": 10000,
+    "cloudiness": 0,
+    "timezone": -18000,
+    "recorded_datetime_local": "2023-11-18 14: 39: 40",
+    "sunset_datetime_local": "2023-11-18 12: 08: 26",
+    "sunrise_datetime_local": "2023-11-18 02: 26: 15",
+    "recorded_weekday_local": "Saturday",
+    "recorded_month_local": "November",
+    "recorded_year_local": 2023,
+    "daylight_duration_minutes": 582,
+    "dew_point": -1.54,
+    "heat_index": 4.53
+}
